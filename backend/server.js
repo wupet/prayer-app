@@ -3,8 +3,10 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const pool = require("./src/db");
+const prayerRoutes = require("./src/routes/prayers");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -21,6 +23,8 @@ app.get("/test", async (req, res) => {
     res.status(500).send("Database connection failed");
   }
 });
+
+app.use("/api", prayerRoutes);
 
 const PORT = process.env.PORT || 5000;
 
