@@ -1,0 +1,50 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.prayer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.prayer-form input,
+.prayer-form textarea {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.prayer-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.prayer-form button,
+.prayer-card button {
+  width: fit-content;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prayer-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
