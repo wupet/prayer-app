@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config();// loads in data from .env file
 
 const express = require("express");
 const cors = require("cors");
@@ -7,8 +7,8 @@ const prayerRoutes = require("./src/routes/prayers");
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(cors()); // allows the frontend and back end to talk to each other despite varying urls
+app.use(express.json()); // allows express to read json request bodies
 
 app.get("/", (req, res) => {
   res.send("Prayer API Running");
@@ -24,9 +24,9 @@ app.get("/test", async (req, res) => {
   }
 });
 
-app.use("/api", prayerRoutes);
+app.use("/api", prayerRoutes); // all routes with /api go to prayerroutes (./src/routes/prayers) 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; // you might be able to run on ports other than 5000 but itll be weird
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
